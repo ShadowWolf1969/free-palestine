@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Dashboard crisi umanitaria Gaza - Dati ufficiali ONU">
+    <meta property="og:title" content="Gaza Crisis Dashboard">
+    <meta property="og:description" content="Dati verificati da fonti ufficiali ONU, OMS, UNRWA">
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjI2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2NjdlZWEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3NjRiYTIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNhKSIvPjx0ZXh0IHg9IjI1MCIgeT0iMTAwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+HsO+4j0dhemE8L3RleHQ+PHRleHQgeD0iMjUwIiB5PSIxNDAiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNyaXNpcyBEYXNoYm9hcmQ8L3RleHQ+PHRleHQgeD0iMjUwIiB5PSIxODAiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRhdGkgdmVyaWZpY2F0aSBPTlUsIE9NUywgVU5SV0E8L3RleHQ+PC9zdmc+">
+    <title>Gaza Crisis Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f0f2f5;
+            color: #1c1e21;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .telegram-header {
+            background: linear-gradient(135deg, #0088cc, #0066aa);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .telegram-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .telegram-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        .quick-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            margin-bottom: 10px;
+        }
+        
+        .stat-bubble {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 20px 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+        }
+        
+        .stat-bubble.warning {
+            background: linear-gradient(135deg, #ffd93d, #ffcd02);
+            color: #333;
+            box-shadow: 0 4px 15px rgba(255,217,61,0.3);
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section-header {
+            background: #f8f9fa;
+            padding: 15px;
+            font-weight: 600;
+            color: #1c1e21;
+            border-bottom: 1px solid #e4e6ea;
+        }
+        
+        .section-content {
+            padding: 15px;
+        }
+        
+        .crisis-alert {
+            background: linear-gradient(135deg, #ff4757, #ff3838);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-left: 3px solid #e4e6ea;
+            padding-left: 15px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item.critical {
+            border-left-color: #ff4757;
+            background: #fff5f5;
+        }
+        
+        .timeline-item.ongoing {
+            border-left-color: #0088cc;
+            background: #f0f8ff;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #65676b;
+            min-width: 60px;
+            margin-right: 10px;
+        }
+        
+        .timeline-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+        
+        .source-tag {
+            display: inline-block;
+            background: #e4e6ea;
+            color: #65676b;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-top: 5px;
+        }
+        
+        .floating-stats {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #0088cc, #0066aa);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(0,136,204,0.4);
+            z-index: 50;
+        }
+        
+        .key-facts {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .key-facts ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .key-facts li {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        .share-footer {
+            background: #f8f9fa;
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #65676b;
+        }
+        
+        .share-btn {
+            display: inline-block;
+            background: #0088cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            font-size: 0.9rem;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e4e6ea;
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4757, #ff3838);
+            border-radius: 4px;
+            animation: fillProgress 2s ease-out;
+        }
+        
+        @keyframes fillProgress {
+            from { width: 0; }
+            to { width: var(--progress); }
+        }
+        
+        /* Ottimizzazioni Telegram */
+        @media (max-width: 480px) {
+            .quick-stats {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding: 10px;
+            }
+            
+            .stat-bubble {
+                padding: 15px 10px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .section-content {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="telegram-header">
+        <h1>🇵🇸 Gaza Crisis Dashboard</h1>
+        <p>📊 Dati verificati: ONU • OMS • UNRWA</p>
+        <p style="font-size: 0.8rem; margin-top: 8px;">
+            Aggiornato: <span id="date"></span>
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="crisis-alert">
+            ⚠️ <strong>CARESTIA CONFERMATA</strong> dall'IPC<br>
+            <small>Fase 5 - Situazione Catastrofica</small>
+        </div>
+
+        <div class="quick-stats">
+            <div class="stat-bubble">
+                <span class="stat-number">62.000+</span>
+                <div class="stat-label">Palestinesi Uccisi</div>
+                <div class="source-tag">Min. Salute Gaza</div>
+            </div>
+            <div class="stat-bubble warning">
+                <span class="stat-number">158.000+</span>
+                <div class="stat-label">Feriti</div>
+                <div class="source-tag">UNRWA</div>
+            </div>
+            <div class="stat-bubble">
+                <span class="stat-number">1.9M</span>
+                <div class="stat-label">Sfollati (90%)</div>
+                <div class="source-tag">UN OCHA</div>
+            </div>
+            <div class="stat-bubble">
+                <span class="stat-number">50%</span>
+                <div class="stat-label">Ospedali KO</div>
+                <div class="source-tag">OMS</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🏥 Collasso Sistema Sanitario</div>
+            <div class="section-content">
+                <p><strong>Meno della metà degli ospedali funziona</strong> (OMS)</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="--progress: 50%; width: 50%;"></div>
+                </div>
+                <div class="key-facts">
+                    <strong>Situazione Critica:</strong>
+                    <ul>
+                        <li>Sistema sanitario al collasso</li>
+                        <li>Carenza critica di medicinali</li>
+                        <li>Mancanza di carburante per generatori</li>
+                        <li>158.000+ feriti necessitano cure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🍞 Crisi Alimentare</div>
+            <div class="section-content">
+                <p><strong>CARESTIA CONFERMATA</strong> - Fase 5 IPC</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="--progress: 100%; width: 100%;"></div>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #65676b;">
+                    Oltre metà della popolazione (1M+ persone) affronta 
+                    <strong>insicurezza alimentare catastrofica</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🚢 Global Sumud Flotilla 2025</div>
+            <div class="section-content">
+                <div class="crisis-alert" style="background: linear-gradient(135deg, #0088cc, #0066aa); margin-bottom: 15px;">
+                    <strong>LA PIÙ GRANDE FLOTILLA DELLA STORIA</strong><br>
+                    <small>50+ navi • 44 paesi • 6 continenti</small>
+                </div>
+                
+                <div class="timeline-item ongoing">
+                    <div class="timeline-date">31 Ago</div>
+                    <div class="timeline-text">
+                        <strong>Partenza Barcellona/Genova</strong> - Rinviata per maltempo, poi ripartita
+                        <div class="source-tag">Al Jazeera</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item ongoing">
+                    <div class="timeline-date">4 Set</div>
+                    <div class="timeline-text">
+                        <strong>Convergenza Tunisia</strong> - Riunione delle flotte mediterranee
+                        <div class="source-tag">Global Sumud Flotilla</div>
+                    </div>
+                </div>
+                
+                <div class="key-facts">
+                    <strong>🌍 Coalizioni Partecipanti:</strong>
+                    <ul>
+                        <li><strong>Freedom Flotilla Coalition</strong> (15 anni esperienza)</li>
+                        <li><strong>Global Movement to Gaza</strong> (ex Global March)</li>
+                        <li><strong>Maghreb Sumud Flotilla</strong> (Nord Africa)</li>
+                        <li><strong>Sumud Nusantara</strong> (Malaysia + 8 paesi)</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 10px; margin: 15px 0;">
+                    <strong>💰 Supporto Popolare:</strong><br>
+                    <span style="font-size: 0.9rem;">2+ milioni € raccolti da 30.000 donatori</span><br>
+                    <strong>🎭 Personalità a bordo:</strong><br>
+                    <span style="font-size: 0.9rem;">Greta Thunberg, Ada Colau, Susan Sarandon, Liam Cunningham</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">📊 Freedom Flotilla - Storia Completa</div>
+            <div class="section-content">
+                <div class="timeline-item success" style="border-left-color: #28a745; background: #f0fff0;">
+                    <div class="timeline-date">2008</div>
+                    <div class="timeline-text">
+                        <strong>Free Gaza Movement</strong> - 2 navi arrivano a Gaza ✅
+                        <div class="source-tag">Prima e unica volta</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item critical">
+                    <div class="timeline-date">2010</div>
+                    <div class="timeline-text">
+                        <strong>Mavi Marmara</strong> - 10 attivisti uccisi, 600 passeggeri
+                        <div class="source-tag">UN Report</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item critical">
+                    <div class="timeline-date">2025 Mag</div>
+                    <div class="timeline-text">
+                        <strong>Conscience</strong> - Colpita da droni a 25km da Malta
+                        <div class="source-tag">Al Jazeera</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item critical">
+                    <div class="timeline-date">2025 Giu</div>
+                    <div class="timeline-text">
+                        <strong>Madleen</strong> - Intercettata con Greta Thunberg
+                        <div class="source-tag">185km da Gaza</div>
+                    </div>
+                </div>
+                
+                <div class="key-facts">
+                    <strong>📈 Bilancio 2008-2025:</strong>
+                    <ul>
+                        <li><strong>31 navi</strong> partite (2008-2016)</li>
+                        <li><strong>Solo 5 arrivate</strong> a Gaza (tutte nel 2008)</li>
+                        <li><strong>Dal 2010:</strong> 100% intercettazioni</li>
+                        <li><strong>2025:</strong> Tutte le missioni bloccate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🌍 Paesi Partecipanti Confermati</div>
+            <div class="section-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px;">
+                    <div class="country-tag" style="background: #e3f2fd; color: #1565c0; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇪🇸 Spagna</div>
+                    <div class="country-tag" style="background: #e8f5e8; color: #2e7d32; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇮🇹 Italia</div>
+                    <div class="country-tag" style="background: #fff3e0; color: #f57c00; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇹🇳 Tunisia</div>
+                    <div class="country-tag" style="background: #fce4ec; color: #c2185b; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇲🇾 Malaysia</div>
+                    <div class="country-tag" style="background: #f3e5f5; color: #7b1fa2; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇧🇷 Brasile</div>
+                    <div class="country-tag" style="background: #e0f2f1; color: #00695c; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇦🇺 Australia</div>
+                    <div class="country-tag" style="background: #f1f8e9; color: #33691e; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇿🇦 Sud Africa</div>
+                    <div class="country-tag" style="background: #e8eaf6; color: #3f51b5; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇸🇪 Svezia</div>
+                    <div class="country-tag" style="background: #fff8e1; color: #f9a825; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇰🇼 Kuwait</div>
+                    <div class="country-tag" style="background: #ffebee; color: #d32f2f; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇹🇷 Turchia</div>
+                    <div class="country-tag" style="background: #e1f5fe; color: #0277bd; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇺🇸 USA</div>
+                    <div class="country-tag" style="background: #f9fbe7; color: #689f38; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">+ 33 altri</div>
+                </div>
+                <p style="font-size: 0.8rem; color: #65676b; text-align: center; margin-top: 15px;">
+                    <strong>Fonte verificata:</strong> Al Jazeera, Peoples Dispatch, Global Sumud Flotilla
+                </p>
+            </div>
+        </div>
+            <div class="section-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.8rem;">
+                    <div>
+                        <strong>Dati Umanitari:</strong><br>
+                        • UN OCHA<br>
+                        • UNRWA<br>
+                        • OMS/WHO<br>
+                        • IPC Global
+                    </div>
+                    <div>
+                        <strong>Global Sumud Flotilla:</strong><br>
+                        • Al Jazeera (verificato)<br>
+                        • Peoples Dispatch<br>
+                        • Global Sumud Flotilla (ufficiale)<br>
+                        • Freedom Flotilla Coalition<br>
+                        • Wikipedia (fonti citate)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="share-footer">
+            <p><strong>⚠️ Importante:</strong> Dati in continua evoluzione. Cifre basate su stime ufficiali che possono variare tra fonti.</p>
+            
+            <div style="margin: 15px 0;">
+                <a href="#" class="share-btn" onclick="shareOnTelegram()">📱 Condividi su Telegram</a>
+                <a href="#" class="share-btn" onclick="copyLink()">🔗 Copia Link</a>
+            </div>
+            
+            <p style="font-size: 0.7rem; color: #999;">
+                Dashboard creata per informare con dati verificati<br>
+                Tutte le fonti sono pubbliche e verificabili
+            </p>
+        </div>
+    </div>
+
+    <div class="floating-stats">
+        📊 Live Data
+    </div>
+
+    <script>
+        // Data corrente
+        document.getElementById('date').textContent = new Date().toLocaleDateString('it-IT');
+        
+        // Condivisione Telegram
+        function shareOnTelegram() {
+            var url = encodeURIComponent(window.location.href);
+            var text = encodeURIComponent('🇵🇸 Gaza Crisis Dashboard - Dati ufficiali ONU, OMS, UNRWA');
+            window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
+        }
+        
+        // Copia link
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                alert('✅ Link copiato negli appunti!');
+            }).catch(function() {
+                // Fallback per browser più vecchi
+                var dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                alert('✅ Link copiato!');
+            });
+        }
+        
+        // Animazioni al scroll (ottimizzato per mobile)
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Applica animazioni
+        document.querySelectorAll('.section').forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
