@@ -3,470 +3,930 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Dashboard crisi umanitaria Gaza - Dati ufficiali ONU">
-    <meta property="og:title" content="Gaza Crisis Dashboard">
-    <meta property="og:description" content="Dati verificati da fonti ufficiali ONU, OMS, UNRWA">
-    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjI2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFhcmdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjY2ZWVhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyNjAiIGZpbGw9InVybCgjYSkiLz48dGV4dCB4PSIyNTAiIHk9IjEwMCIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKfl7DvuI9HYXphPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMTQwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DcmlzaXMgRGFzaGJvYXJkPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMTgwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5EYXRpIHZlcmlmaWNhdGkgT05VLCBPTVMsIFVOUldBPC90ZXh0Pjwvc3ZnPg==">
-    <title>Gaza Crisis Dashboard</title>
+    <meta name="description" content="Dashboard crisi Gaza - Dati, fonti e come aiutare">
+    <meta property="og:title" content="Gaza Crisis Dashboard - Informati e Agisci">
+    <meta property="og:description" content="Dati verificati, fonti complete, modi concreti per aiutare">
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjI2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkYzM1NDUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyOGE3NDUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNhKSIvPjx0ZXh0IHg9IjI1MCIgeT0iODAiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4ew77iPR2F6YSBDcmlzaXM8L3RleHQ+PHRleHQgeD0iMjUwIiB5PSIxMTAiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRhdGkgJiBBemllcmE8L3RleHQ+PHRleHQgeD0iMjUwIiB5PSIxNDAiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkluZm9ybWF0aSAmIzg2NSBBaXV0YTwvdGV4dD48L3N2Zz4=">
+    <title>Gaza Crisis Dashboard - Informati e Agisci</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #f0f2f5;
-            color: #1c1e21;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
         
-        .telegram-header {
-            background: linear-gradient(135deg, #0088cc, #0066aa);
-            color: white;
-            padding: 20px 15px;
+        :root {
+            --primary: #1a73e8;
+            --danger: #dc3545;
+            --warning: #ff6b35;
+            --success: #28a745;
+            --info: #17a2b8;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .main-header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
             text-align: center;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
-        .telegram-header h1 {
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--danger), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .action-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .action-btn.danger {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .action-btn.success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .crisis-banner {
+            background: linear-gradient(135deg, var(--danger), #e74c3c);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(220,53,69,0.3);
+        }
+        
+        .crisis-banner h2 {
             font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .crisis-banner .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .crisis-stat {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .crisis-stat .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: block;
             margin-bottom: 5px;
         }
         
-        .telegram-header p {
+        .crisis-stat .label {
             font-size: 0.9rem;
             opacity: 0.9;
         }
         
-        .container {
-            max-width: 100%;
-            padding: 0;
-        }
-        
-        .quick-stats {
+        .section-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            padding: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
             background: white;
-            margin-bottom: 10px;
-        }
-        
-        .stat-bubble {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-            color: white;
-            padding: 20px 15px;
             border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .stat-bubble.warning {
-            background: linear-gradient(135deg, #ffd93d, #ffcd02);
-            color: #333;
-            box-shadow: 0 4px 15px rgba(255,217,61,0.3);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #f1f3f4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-header.danger { color: var(--danger); }
+        .card-header.warning { color: var(--warning); }
+        .card-header.info { color: var(--info); }
+        .card-header.success { color: var(--success); }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #f1f3f4;
         }
         
         .stat-number {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
             margin-bottom: 5px;
-            display: block;
         }
         
         .stat-label {
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .section {
-            background: white;
-            margin-bottom: 10px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .section-header {
-            background: #f8f9fa;
-            padding: 15px;
-            font-weight: 600;
-            color: #1c1e21;
-            border-bottom: 1px solid #e4e6ea;
-        }
-        
-        .section-content {
-            padding: 15px;
-        }
-        
-        .crisis-alert {
-            background: linear-gradient(135deg, #ff4757, #ff3838);
-            color: white;
-            padding: 20px 15px;
-            text-align: center;
-            font-weight: 600;
-        }
-        
-        .timeline-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 12px 0;
-            border-left: 3px solid #e4e6ea;
-            padding-left: 15px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-item.critical {
-            border-left-color: #ff4757;
-            background: #fff5f5;
-        }
-        
-        .timeline-item.ongoing {
-            border-left-color: #0088cc;
-            background: #f0f8ff;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
-        .timeline-date {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #65676b;
-            min-width: 60px;
-            margin-right: 10px;
-        }
-        
-        .timeline-text {
-            flex: 1;
             font-size: 0.9rem;
+            color: var(--gray);
         }
         
-        .source-tag {
-            display: inline-block;
-            background: #e4e6ea;
-            color: #65676b;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.7rem;
-            margin-top: 5px;
-        }
-        
-        .floating-stats {
-            position: fixed;
-            bottom: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #0088cc, #0066aa);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(0,136,204,0.4);
-            z-index: 50;
-        }
-        
-        .key-facts {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
+        .progress-container {
             margin: 15px 0;
         }
         
-        .key-facts ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        
-        .key-facts li {
-            margin: 5px 0;
-            font-size: 0.9rem;
-        }
-        
-        .share-footer {
-            background: #f8f9fa;
-            padding: 20px 15px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #65676b;
-        }
-        
-        .share-btn {
-            display: inline-block;
-            background: #0088cc;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
             font-weight: 600;
-            margin: 10px 5px;
-            font-size: 0.9rem;
         }
         
         .progress-bar {
-            height: 8px;
-            background: #e4e6ea;
-            border-radius: 4px;
-            margin: 10px 0;
+            height: 12px;
+            background: #e9ecef;
+            border-radius: 6px;
             overflow: hidden;
         }
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ff4757, #ff3838);
-            border-radius: 4px;
-            animation: fillProgress 2s ease-out;
+            border-radius: 6px;
+            transition: width 2s ease;
+            position: relative;
         }
         
-        @keyframes fillProgress {
-            from { width: 0; }
-            to { width: var(--progress); }
+        .progress-fill.danger { background: linear-gradient(90deg, var(--danger), #e74c3c); }
+        .progress-fill.warning { background: linear-gradient(90deg, var(--warning), #fd79a8); }
+        .progress-fill.success { background: linear-gradient(90deg, var(--success), #00b894); }
+        
+        .timeline {
+            position: relative;
         }
         
-        /* Ottimizzazioni Telegram */
-        @media (max-width: 480px) {
-            .quick-stats {
-                grid-template-columns: 1fr;
-                gap: 8px;
-                padding: 10px;
-            }
-            
-            .stat-bubble {
-                padding: 15px 10px;
-            }
-            
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            
-            .section-content {
-                padding: 12px;
-            }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: -20px;
+            width: 2px;
+            background: #dee2e6;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gray);
+        }
+        
+        .timeline-item.ongoing::after { 
+            background: var(--primary); 
+            animation: pulse 2s infinite;
+        }
+        
+        .timeline-item.critical::after { background: var(--danger); }
+        .timeline-item.success::after { background: var(--success); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+        
+        .timeline-date {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .source-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .help-section {
+            background: linear-gradient(135deg, var(--success), #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .help-card {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .help-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+        
+        .help-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .help-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .help-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .help-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .help-link:hover {
+            background: white;
+            color: var(--success);
+            border-color: white;
+        }
+        
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .country-tag {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: var(--primary);
+            padding: 12px 8px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .country-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(26,115,232,0.3);
+        }
+        
+        .sources-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .source-category {
+            padding: 20px;
+            border: 2px solid #f1f3f4;
+            border-radius: 12px;
+        }
+        
+        .source-category h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .source-list {
+            list-style: none;
+        }
+        
+        .source-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        
+        .source-list li::before {
+            content: '🔗';
+            position: absolute;
+            left: 0;
+        }
+        
+        .external-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .external-link:hover {
+            text-decoration: underline;
+        }
+        
+        .share-section {
+            background: linear-gradient(135deg, var(--primary), #4285f4);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .floating-help {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(40,167,69,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-help:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(40,167,69,0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .main-title { font-size: 1.8rem; }
+            .container { padding: 15px; }
+            .section-grid { grid-template-columns: 1fr; gap: 20px; }
+            .crisis-banner .stats { grid-template-columns: repeat(2, 1fr); }
+            .help-grid { grid-template-columns: 1fr; }
+            .sources-grid { grid-template-columns: 1fr; }
+            .country-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <div class="telegram-header">
-        <h1>🇵🇸 Gaza Crisis Dashboard</h1>
-        <p>📊 Dati verificati: ONU • OMS • UNRWA</p>
-        <p style="font-size: 0.8rem; margin-top: 8px;">
-            Aggiornato: <span id="date"></span>
-        </p>
-    </div>
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="main-title">🇵🇸 Gaza Crisis Dashboard</h1>
+            <p class="subtitle">📊 Dati Verificati • 🤝 Modi per Aiutare • 🔗 Fonti Complete</p>
+            <div class="quick-actions">
+                <a href="#crisis" class="action-btn danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Situazione Critica
+                </a>
+                <a href="#help" class="action-btn success">
+                    <i class="fas fa-heart"></i>
+                    Come Aiutare
+                </a>
+                <a href="#sources" class="action-btn primary">
+                    <i class="fas fa-book"></i>
+                    Fonti & Link
+                </a>
+            </div>
+        </div>
+    </header>
 
     <div class="container">
-        <div class="crisis-alert">
-            ⚠️ <strong>CARESTIA CONFERMATA</strong> dall'IPC<br>
-            <small>Fase 5 - Situazione Catastrofica</small>
-        </div>
-
-        <div class="quick-stats">
-            <div class="stat-bubble">
-                <span class="stat-number">62.000+</span>
-                <div class="stat-label">Palestinesi Uccisi</div>
-                <div class="source-tag">Min. Salute Gaza / OCHA</div>
-            </div>
-            <div class="stat-bubble warning">
-                <span class="stat-number">158.000+</span>
-                <div class="stat-label">Feriti</div>
-                <div class="source-tag">Min. Salute Gaza / OCHA</div>
-            </div>
-            <div class="stat-bubble">
-                <span class="stat-number">1.9M</span>
-                <div class="stat-label">Sfollati (90%)</div>
-                <div class="source-tag">UN OCHA / UNRWA</div>
-            </div>
-            <div class="stat-bubble">
-                <span class="stat-number">~50%</span>
-                <div class="stat-label">Ospedali funzionanti</div>
-                <div class="source-tag">OMS</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header">🏥 Collasso Sistema Sanitario</div>
-            <div class="section-content">
-                <p><strong>Meno della metà degli ospedali funziona a pieno regime</strong></p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="--progress: 50%; width: 50%;"></div>
+        <div id="crisis" class="crisis-banner">
+            <h2><i class="fas fa-exclamation-triangle"></i> EMERGENZA UMANITARIA IN CORSO</h2>
+            <p><strong>CARESTIA CONFERMATA</strong> dall'IPC - Fase 5 (Catastrofica)</p>
+            <div class="stats">
+                <div class="crisis-stat">
+                    <span class="number">62.000+</span>
+                    <div class="label">Palestinesi Uccisi</div>
                 </div>
-                <div class="key-facts">
-                    <strong>Situazione Critica (OMS):</strong>
-                    <ul>
-                        <li>Carenza critica di medicinali (52% esauriti)</li>
-                        <li>Carenza di carburante per i generatori</li>
-                        <li>Ospedali sopraffatti da feriti</li>
+                <div class="crisis-stat">
+                    <span class="number">158.000+</span>
+                    <div class="label">Feriti</div>
+                </div>
+                <div class="crisis-stat">
+                    <span class="number">1.9M</span>
+                    <div class="label">Sfollati (90%)</div>
+                </div>
+                <div class="crisis-stat">
+                    <span class="number">~50%</span>
+                    <div class="label">Ospedali KO</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-grid">
+            <div class="card">
+                <div class="card-header danger">
+                    <i class="fas fa-hospital"></i>
+                    Sistema Sanitario Collassato
+                </div>
+                <div class="card-content">
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Ospedali Funzionanti</span>
+                            <span>~50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill danger" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--danger)">52%</div>
+                            <div class="stat-label">Medicinali Esauriti</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--warning)">158k+</div>
+                            <div class="stat-label">Feriti da Curare</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Fonte:</strong> <a href="https://www.who.int/emergencies/situations/occupied-palestinian-territory" class="external-link" target="_blank">OMS/WHO <i class="fas fa-external-link-alt"></i></a></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header warning">
+                    <i class="fas fa-utensils"></i>
+                    Crisi Alimentare Catastrofica
+                </div>
+                <div class="card-content">
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Popolazione in Carestia</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill danger" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--danger)">1M+</div>
+                            <div class="stat-label">In Fame Catastrofica</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--warning)">Fase 5</div>
+                            <div class="stat-label">IPC Famine</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Fonte:</strong> <a href="https://www.ipcinfo.org/" class="external-link" target="_blank">IPC Global <i class="fas fa-external-link-alt"></i></a></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header info">
+                    <i class="fas fa-ship"></i>
+                    Global Sumud Flotilla 2025
+                </div>
+                <div class="card-content">
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--info)">50+</div>
+                            <div class="stat-label">Navi</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--success)">44</div>
+                            <div class="stat-label">Paesi</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--warning)">2M€</div>
+                            <div class="stat-label">Raccolti</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" style="color: var(--danger)">0%</div>
+                            <div class="stat-label">Successo 2010+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item ongoing">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2 Set 2025</div>
+                                <div class="timeline-title">Flotta in Navigazione</div>
+                                <div class="timeline-desc">Verso convergenza Tunisia - Status LIVE</div>
+                                <span class="source-tag">Al Jazeera</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item critical">
+                            <div class="timeline-content">
+                                <div class="timeline-date">Giu 2025</div>
+                                <div class="timeline-title">Madleen Intercettata</div>
+                                <div class="timeline-desc">Greta Thunberg a bordo, tutti deportati</div>
+                                <span class="source-tag">Times of Israel</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Sito Ufficiale:</strong> <a href="https://globalsumudflotilla.org/" class="external-link" target="_blank">Global Sumud Flotilla <i class="fas fa-external-link-alt"></i></a></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header success">
+                    <i class="fas fa-users"></i>
+                    Paesi Partecipanti Flotilla
+                </div>
+                <div class="card-content">
+                    <div class="country-grid">
+                        <div class="country-tag">🇪🇸 Spagna</div>
+                        <div class="country-tag">🇮🇹 Italia</div>
+                        <div class="country-tag">🇹🇳 Tunisia</div>
+                        <div class="country-tag">🇲🇾 Malaysia</div>
+                        <div class="country-tag">🇧🇷 Brasile</div>
+                        <div class="country-tag">🇦🇺 Australia</div>
+                        <div class="country-tag">🇿🇦 Sud Africa</div>
+                        <div class="country-tag">🇸🇪 Svezia</div>
+                        <div class="country-tag">🇰🇼 Kuwait</div>
+                        <div class="country-tag">🇹🇷 Turchia</div>
+                        <div class="country-tag">🇺🇸 USA</div>
+                        <div class="country-tag">🌍 +33 Altri</div>
+                    </div>
+                    <p style="margin-top: 15px;"><strong>6 continenti rappresentati</strong> - La più grande mobilitazione marittima civile della storia</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="help" class="help-section">
+            <h2><i class="fas fa-heart"></i> COME PUOI AIUTARE CONCRETAMENTE</h2>
+            <p>Ogni azione conta. Ecco modi verificati per supportare la popolazione di Gaza:</p>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">💰</div>
+                    <div class="help-title">Dona ad Organizzazioni Ufficiali</div>
+                    <div class="help-links">
+                        <a href="https://www.unrwa.org/donate" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> UNRWA Official
+                        </a>
+                        <a href="https://www.msf.org/palestine" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Medici Senza Frontiere
+                        </a>
+                        <a href="https://www.oxfam.org/en/what-we-do/countries/palestine" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Oxfam Palestine
+                        </a>
+                        <a href="https://www.redcross.org/about-us/news-and-events/news/2023/help-people-affected-by-crisis-in-israel-and-gaza.html" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Croce Rossa Int.
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">🚢</div>
+                    <div class="help-title">Supporta le Flotillas</div>
+                    <div class="help-links">
+                        <a href="https://freedomflotilla.org/donate/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Freedom Flotilla Coalition
+                        </a>
+                        <a href="https://globalsumudflotilla.org/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Global Sumud Flotilla
+                        </a>
+                        <a href="https://freegazamovement.org/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Free Gaza Movement
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">📢</div>
+                    <div class="help-title">Sensibilizza & Informa</div>
+                    <div class="help-links">
+                        <a href="#" onclick="shareOnTelegram()" class="help-link">
+                            <i class="fab fa-telegram"></i> Condividi Dashboard
+                        </a>
+                        <a href="https://www.amnesty.org/en/location/middle-east-and-north-africa/palestine-state-of/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Amnesty Reports
+                        </a>
+                        <a href="https://www.hrw.org/middle-east/north-africa/israel/palestine" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Human Rights Watch
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">🏛️</div>
+                    <div class="help-title">Azione Politica</div>
+                    <div class="help-links">
+                        <a href="mailto:info@governo.it?subject=Situazione Gaza" class="help-link">
+                            <i class="fas fa-envelope"></i> Contatta Governo IT
+                        </a>
+                        <a href="https://www.europarl.europa.eu/meps/en/search/advanced" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Europarlamentari
+                        </a>
+                        <a href="https://www.un.org/en/our-work/support-victims-terrorism-and-uphold-human-rights" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Petizioni ONU
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">📚</div>
+                    <div class="help-title">Educazione & Ricerca</div>
+                    <div class="help-links">
+                        <a href="https://www.ochaopt.org/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> UN OCHA Reports
+                        </a>
+                        <a href="https://www.btselem.org/english/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> B'Tselem
+                        </a>
+                        <a href="https://visualizingpalestine.org/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Visualizing Palestine
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">🛒</div>
+                    <div class="help-title">Boicottaggio Consapevole</div>
+                    <div class="help-links">
+                        <a href="https://bdsmovement.net/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> BDS Movement
+                        </a>
+                        <a href="https://www.ethicalconsumer.org/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Ethical Consumer
+                        </a>
+                        <a href="https://boycottapp.com/" class="help-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Boycott App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sources" class="sources-section">
+            <h2><i class="fas fa-book-open"></i> FONTI UFFICIALI E VERIFICATE</h2>
+            <p>Tutti i dati provengono da organizzazioni internazionali riconosciute e fonti giornalistiche verificate:</p>
+            
+            <div class="sources-grid">
+                <div class="source-category">
+                    <h4><i class="fas fa-hospital"></i> Dati Umanitari</h4>
+                    <ul class="source-list">
+                        <li><a href="https://www.unocha.org/occupied-palestinian-territory" class="external-link" target="_blank">UN OCHA Occupied Palestinian Territory</a></li>
+                        <li><a href="https://www.unrwa.org/" class="external-link" target="_blank">UNRWA - Agenzia ONU Rifugiati Palestinesi</a></li>
+                        <li><a href="https://www.who.int/emergencies/situations/occupied-palestinian-territory" class="external-link" target="_blank">OMS/WHO - Organizzazione Mondiale Sanità</a></li>
+                        <li><a href="https://www.ipcinfo.org/" class="external-link" target="_blank">IPC - Integrated Food Security Classification</a></li>
+                        <li><a href="https://www.fao.org/emergencies/crisis/occupied-palestinian-territory/en/" class="external-link" target="_blank">FAO - Food and Agriculture Organization</a></li>
+                        <li><a href="https://www.unicef.org/sop/" class="external-link" target="_blank">UNICEF - State of Palestine</a></li>
+                    </ul>
+                </div>
+
+                <div class="source-category">
+                    <h4><i class="fas fa-ship"></i> Freedom Flotilla & Global Sumud</h4>
+                    <ul class="source-list">
+                        <li><a href="https://freedomflotilla.org/" class="external-link" target="_blank">Freedom Flotilla Coalition (Ufficiale)</a></li>
+                        <li><a href="https://globalsumudflotilla.org/" class="external-link" target="_blank">Global Sumud Flotilla (Ufficiale)</a></li>
+                        <li><a href="https://www.aljazeera.com/" class="external-link" target="_blank">Al Jazeera English</a></li>
+                        <li><a href="https://www.timesofisrael.com/" class="external-link" target="_blank">The Times of Israel</a></li>
+                        <li><a href="https://peoplesdispatch.org/" class="external-link" target="_blank">Peoples Dispatch</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Global_Sumud_Flotilla" class="external-link" target="_blank">Wikipedia (con fonti citate)</a></li>
+                    </ul>
+                </div>
+
+                <div class="source-category">
+                    <h4><i class="fas fa-scale-balanced"></i> Diritti Umani</h4>
+                    <ul class="source-list">
+                        <li><a href="https://www.amnesty.org/en/location/middle-east-and-north-africa/palestine-state-of/" class="external-link" target="_blank">Amnesty International</a></li>
+                        <li><a href="https://www.hrw.org/middle-east/north-africa/israel/palestine" class="external-link" target="_blank">Human Rights Watch</a></li>
+                        <li><a href="https://www.btselem.org/english/" class="external-link" target="_blank">B'Tselem - Israeli Human Rights</a></li>
+                        <li><a href="https://www.ohchr.org/en/countries/mena/occupied-palestinian-territory" class="external-link" target="_blank">OHCHR - UN Human Rights</a></li>
+                        <li><a href="https://www.icj-cij.org/" class="external-link" target="_blank">ICJ - Corte Internazionale Giustizia</a></li>
+                        <li><a href="https://www.icc-cpi.int/" class="external-link" target="_blank">ICC - Corte Penale Internazionale</a></li>
+                    </ul>
+                </div>
+
+                <div class="source-category">
+                    <h4><i class="fas fa-newspaper"></i> Media Indipendenti</h4>
+                    <ul class="source-list">
+                        <li><a href="https://www.middleeasteye.net/news/palestine" class="external-link" target="_blank">Middle East Eye</a></li>
+                        <li><a href="https://mondoweiss.net/" class="external-link" target="_blank">Mondoweiss</a></li>
+                        <li><a href="https://electronicintifada.net/" class="external-link" target="_blank">Electronic Intifada</a></li>
+                        <li><a href="https://www.972mag.com/" class="external-link" target="_blank">+972 Magazine</a></li>
+                        <li><a href="https://palestinechronicle.com/" class="external-link" target="_blank">Palestine Chronicle</a></li>
+                        <li><a href="https://www.retisolidali.it/" class="external-link" target="_blank">Reti Solidali (Italia)</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-header">🍞 Crisi Alimentare</div>
-            <div class="section-content">
-                <p><strong>CARESTIA CONFERMATA</strong> - Fase 5 IPC</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="--progress: 100%; width: 100%;"></div>
-                </div>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #65676b;">
-                    Oltre 1 milione di persone affronta 
-                    <strong>insicurezza alimentare catastrofica</strong>
-                </p>
-            </div>
+        <div class="disclaimer">
+            <h4><i class="fas fa-info-circle"></i> Importante</h4>
+            <p><strong>I dati sulla situazione a Gaza sono in continua evoluzione.</strong> Le cifre sulle vittime sono spesso stime che possono variare tra fonti diverse a causa delle difficoltà di raccolta dati in zona di guerra. Tutti i dati presentati sono stati verificati tramite fonti ufficiali ONU e organizzazioni internazionali riconosciute.</p>
+            <p style="margin-top: 10px;"><strong>Disclaimer:</strong> Questa dashboard è stata creata per scopi informativi e di sensibilizzazione, utilizzando solo fonti pubbliche e verificabili. Non rappresenta alcuna organizzazione politica specifica.</p>
         </div>
 
-        <div class="section">
-            <div class="section-header">🚢 Aggiornamenti in Diretta</div>
-            <div class="section-content">
-                <div class="crisis-alert" style="background: linear-gradient(135deg, #0088cc, #0066aa); margin-bottom: 15px;">
-                    <strong>LA FLOTILLA È IN NAVIGAZIONE</strong><br>
-                    <small>Verso la convergenza in Tunisia</small>
-                </div>
-                
-                <div class="timeline-item ongoing">
-                    <div class="timeline-date">Oggi</div>
-                    <div class="timeline-text">
-                        <strong>Aggiornamento:</strong> Le navi stanno mantenendo la rotta verso il punto di incontro. L'umore a bordo è alto nonostante il rinvio iniziale.
-                        <div class="source-tag">Global Sumud Flotilla</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item ongoing">
-                    <div class="timeline-date">Stima</div>
-                    <div class="timeline-text">
-                        <strong>Arrivo:</strong> Previsto per il 4 Settembre in Tunisia.
-                        <div class="source-tag">Coordinamento Internazionale</div>
-                    </div>
-                </div>
-                
-                <div class="key-facts" style="background: #f0f8ff; border-left-color: #0088cc;">
-                    <strong>Buon Vento, solidarietà in mare! 🕊️</strong>
-                </div>
+        <div class="share-section">
+            <h2><i class="fas fa-share-alt"></i> CONDIVIDI PER INFORMARE</h2>
+            <p>Aiuta a diffondere informazioni verificate sulla situazione a Gaza</p>
+            <div class="share-buttons">
+                <a href="#" class="action-btn primary" onclick="shareOnTelegram()">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="#" class="action-btn primary" onclick="shareOnWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="#" class="action-btn primary" onclick="shareOnTwitter()">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="#" class="action-btn primary" onclick="copyLink()">
+                    <i class="fas fa-copy"></i> Copia Link
+                </a>
             </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header">📊 Flotilla - Storia Recente</div>
-            <div class="section-content">
-                <div class="timeline-item success" style="border-left-color: #28a745; background: #f0fff0;">
-                    <div class="timeline-date">2008</div>
-                    <div class="timeline-text">
-                        <strong>Free Gaza Movement</strong> - 2 navi arrivano a Gaza ✅
-                        <div class="source-tag">Prima e unica volta</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item critical">
-                    <div class="timeline-date">2010</div>
-                    <div class="timeline-text">
-                        <strong>Mavi Marmara</strong> - 10 attivisti uccisi
-                        <div class="source-tag">UN Report</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item critical">
-                    <div class="timeline-date">2025 Giu</div>
-                    <div class="timeline-text">
-                        <strong>Madleen</strong> - Intercettata dalla Marina Israeliana
-                        <div class="source-tag">185km da Gaza</div>
-                    </div>
-                </div>
-                
-                <div class="key-facts">
-                    <strong>📈 Bilancio storico:</strong>
-                    <ul>
-                        <li><strong>Dal 2010:</strong> 100% intercettazioni</li>
-                        <li><strong>2025:</strong> Tutte le missioni bloccate</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header">🌍 Paesi Partecipanti Verificati</div>
-            <div class="section-content">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px;">
-                    <div class="country-tag" style="background: #e3f2fd; color: #1565c0; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇪🇸 Spagna</div>
-                    <div class="country-tag" style="background: #e8f5e8; color: #2e7d32; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇮🇹 Italia</div>
-                    <div class="country-tag" style="background: #fff3e0; color: #f57c00; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇹🇳 Tunisia</div>
-                    <div class="country-tag" style="background: #fce4ec; color: #c2185b; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇲🇾 Malaysia</div>
-                    <div class="country-tag" style="background: #f3e5f5; color: #7b1fa2; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇧🇷 Brasile</div>
-                    <div class="country-tag" style="background: #e0f2f1; color: #00695c; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇦🇺 Australia</div>
-                    <div class="country-tag" style="background: #f1f8e9; color: #33691e; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇿🇦 Sud Africa</div>
-                    <div class="country-tag" style="background: #e8eaf6; color: #3f51b5; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇸🇪 Svezia</div>
-                    <div class="country-tag" style="background: #fff8e1; color: #f9a825; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇰🇼 Kuwait</div>
-                    <div class="country-tag" style="background: #ffebee; color: #d32f2f; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇹🇷 Turchia</div>
-                    <div class="country-tag" style="background: #e1f5fe; color: #0277bd; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">🇺🇸 USA</div>
-                    <div class="country-tag" style="background: #f9fbe7; color: #689f38; padding: 8px; border-radius: 15px; text-align: center; font-size: 0.8rem;">+ 35 altri</div>
-                </div>
-                <p style="font-size: 0.8rem; color: #65676b; text-align: center; margin-top: 15px;">
-                    <strong>Fonte verificata:</strong> Al Jazeera, Peoples Dispatch, Global Sumud Flotilla
-                </p>
-            </div>
-        </div>
-            <div class="section-content">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.8rem;">
-                    <div>
-                        <strong>Dati Umanitari:</strong><br>
-                        • UN OCHA<br>
-                        • UNRWA<br>
-                        • OMS/WHO<br>
-                        • IPC Global
-                    </div>
-                    <div>
-                        <strong>Global Sumud Flotilla:</strong><br>
-                        • Al Jazeera<br>
-                        • Times of Israel<br>
-                        • Global Sumud Flotilla (ufficiale)<br>
-                        • Freedom Flotilla Coalition
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="share-footer">
-            <p><strong>⚠️ Importante:</strong> Dati in continua evoluzione. Cifre basate su stime ufficiali che possono variare tra fonti.</p>
-            
-            <div style="margin: 15px 0;">
-                <a href="#" class="share-btn" onclick="shareOnTelegram()">📱 Condividi su Telegram</a>
-                <a href="#" class="share-btn" onclick="copyLink()">🔗 Copia Link</a>
-            </div>
-            
-            <p style="font-size: 0.7rem; color: #999;">
-                Dashboard creata per informare con dati verificati<br>
-                Tutte le fonti sono pubbliche e verificabili
-            </p>
         </div>
     </div>
 
-    <div class="floating-stats">
-        📊 Dati Aggiornati
+    <div class="floating-help" onclick="scrollToHelp()" title="Vai a 'Come Aiutare'">
+        <i class="fas fa-heart"></i>
     </div>
 
     <script>
-        // Data corrente
-        document.getElementById('date').textContent = new Date().toLocaleDateString('it-IT');
-        
-        // Condivisione Telegram
+        // Condivisione
         function shareOnTelegram() {
-            var url = encodeURIComponent(window.location.href);
-            var text = encodeURIComponent('🇵🇸 Gaza Crisis Dashboard - Dati ufficiali ONU, OMS, UNRWA');
-            window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('🇵🇸 Gaza Crisis Dashboard - Dati ufficiali, fonti verificate e modi concreti per aiutare');
+            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
         }
-        
-        // Copia link
+
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('🇵🇸 Gaza Crisis Dashboard - Dati ufficiali e modi per aiutare: ');
+            window.open(`https://api.whatsapp.com/send?text=${text}${url}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('🇵🇸 Gaza Crisis Dashboard - Dati verificati da ONU, OMS, UNRWA e modi concreti per aiutare');
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+
         function copyLink() {
-            navigator.clipboard.writeText(window.location.href).then(function() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
                 alert('✅ Link copiato negli appunti!');
-            }).catch(function() {
-                // Fallback per browser più vecchi
-                var dummy = document.createElement('input');
+            }).catch(() => {
+                const dummy = document.createElement('input');
                 document.body.appendChild(dummy);
                 dummy.value = window.location.href;
                 dummy.select();
@@ -475,23 +935,35 @@
                 alert('✅ Link copiato!');
             });
         }
-        
-        // Animazioni al scroll (ottimizzato per mobile)
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+
+        function scrollToHelp() {
+            document.getElementById('help').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Animazioni e interattività
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animazione progress bars
+            const progressBars = document.querySelectorAll('.progress-fill');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.width = entry.target.style.width;
+                    }
+                });
             });
-        });
-        
-        // Applica animazioni
-        document.querySelectorAll('.section').forEach(function(el) {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+            
+            progressBars.forEach(bar => observer.observe(bar));
+
+            // Smooth scrolling per i link
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
         });
     </script>
 </body>
