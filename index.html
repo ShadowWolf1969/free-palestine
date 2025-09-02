@@ -518,6 +518,190 @@
             box-shadow: 0 6px 20px rgba(40,167,69,0.6);
         }
         
+        .free-palestine-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--danger), var(--success));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .free-palestine-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 4px 20px rgba(220,53,69,0.4); }
+            to { box-shadow: 0 6px 25px rgba(40,167,69,0.6); }
+        }
+        
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .popup-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .popup-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: popIn 0.4s ease;
+        }
+        
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .popup-flag {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        
+        .popup-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--danger), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .popup-message {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-close:hover {
+            color: var(--danger);
+            transform: scale(1.1);
+        }
+        
+        .human-message {
+            background: linear-gradient(135deg, #e8f4fd, #d1ecf1);
+            border-left: 5px solid var(--info);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .human-message::before {
+            content: '❤️';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .human-message h3 {
+            color: var(--info);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .human-message p {
+            color: #2c5f6f;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .flotilla-support {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .flotilla-support::before {
+            content: '⛵';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .flotilla-support h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .flotilla-support p {
+            color: #1565c0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
         @media (max-width: 768px) {
             .main-title { font-size: 1.8rem; }
             .container { padding: 15px; }
@@ -573,6 +757,11 @@
                     <div class="label">Ospedali KO</div>
                 </div>
             </div>
+        </div>
+
+        <div class="human-message">
+            <h3>💫 Restiamo Umani</h3>
+            <p>"In mezzo alla sofferenza, la nostra umanità è ciò che ci unisce. Ogni gesto di solidarietà conta, ogni voce che si alza per la giustizia fa la differenza."</p>
         </div>
 
         <div class="section-grid">
@@ -684,6 +873,11 @@
                     
                     <p><strong>Sito Ufficiale:</strong> <a href="https://globalsumudflotilla.org/" class="external-link" target="_blank">Global Sumud Flotilla <i class="fas fa-external-link-alt"></i></a></p>
                 </div>
+            </div>
+            
+            <div class="flotilla-support">
+                <h3>⛵ Coraggio in Mare</h3>
+                <p><strong>"Anche se i venti sono contrari, la solidarietà è più forte di ogni tempesta. Buon vento, coraggiosi navigatori della libertà!"</strong></p>
             </div>
 
             <div class="card">
@@ -902,6 +1096,35 @@
         <i class="fas fa-heart"></i>
     </div>
 
+    <button class="free-palestine-btn" onclick="openFreePalestinePopup()" title="Free Palestine!">
+        🇵🇸 FREE PALESTINE
+    </button>
+
+    <!-- Popup Free Palestine -->
+    <div id="freePalestinePopup" class="popup-overlay" onclick="closePopup(event)">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <div class="popup-flag">🇵🇸</div>
+            <h2 class="popup-title">FREE PALESTINE</h2>
+            <div class="popup-message">
+                <p><strong>"Dal fiume al mare, Palestina sarà libera"</strong></p>
+                <p>🕊️ Pace • ⚖️ Giustizia • 🏠 Diritto al Ritorno</p>
+                <p style="margin-top: 20px; font-style: italic;">
+                    "La libertà non è mai data volontariamente dall'oppressore; deve essere richiesta dall'oppresso."<br>
+                    <small>- Martin Luther King Jr.</small>
+                </p>
+            </div>
+            <div style="margin-top: 30px;">
+                <button class="action-btn success" onclick="shareFreePalestine()" style="margin: 5px;">
+                    <i class="fas fa-share"></i> Condividi il Messaggio
+                </button>
+                <button class="action-btn primary" onclick="scrollToHelp(); closePopup();" style="margin: 5px;">
+                    <i class="fas fa-heart"></i> Agisci Ora
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Condivisione
         function shareOnTelegram() {
@@ -939,6 +1162,46 @@
         function scrollToHelp() {
             document.getElementById('help').scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Popup Free Palestine
+        function openFreePalestinePopup() {
+            document.getElementById('freePalestinePopup').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Previene scroll
+        }
+
+        function closePopup(event) {
+            if (event && event.target !== document.getElementById('freePalestinePopup')) return;
+            document.getElementById('freePalestinePopup').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Ripristina scroll
+        }
+
+        function shareFreePalestine() {
+            const text = encodeURIComponent('🇵🇸 FREE PALESTINE - Dal fiume al mare, Palestina sarà libera! ✊\n\n' + window.location.href);
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                navigator.share?.({
+                    title: 'Free Palestine',
+                    text: '🇵🇸 FREE PALESTINE - Dal fiume al mare, Palestina sarà libera! ✊',
+                    url: window.location.href
+                }).catch(() => {
+                    // Fallback
+                    window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+                });
+            } else {
+                // Desktop - copia negli appunti
+                navigator.clipboard.writeText('🇵🇸 FREE PALESTINE - Dal fiume al mare, Palestina sarà libera! ✊\n\n' + window.location.href).then(() => {
+                    alert('✊ Messaggio FREE PALESTINE copiato negli appunti!');
+                });
+            }
+        }
+
+        // Chiudi popup con ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
 
         // Animazioni e interattività
         document.addEventListener('DOMContentLoaded', function() {
